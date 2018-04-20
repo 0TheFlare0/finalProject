@@ -6,7 +6,7 @@ class Ship():
         self.screen = screen
         
         #This will load the ship sprite and get its rect (or rectangle)
-        self.image = pygame.image.load('image/Ship.gif')
+        self.image = pygame.image.load('image/Ship.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
        

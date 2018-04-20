@@ -3,9 +3,10 @@ import pygame
 class Settings():
     def __init__(self):
         #Screen Settings
-        self.screen_width = 1200
-        self.screen_height = 800
-        self.bg_image = "image/Background.gif"
+        self.screen_width = 900
+        self.screen_height = 504
+        self.bg_image = "image/Background.png"
+        self.bg_color = (0, 0, 0)
         #Ship settings
         self.ship_speed_factor = 2
         #Bullet Settings

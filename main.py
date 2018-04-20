@@ -6,20 +6,32 @@
 #My project might to ambitious in that the power ups might take more time then expected to make and the boss might be too difficult to make intresting and fun
 #I don't see that there are many parts to this project that are not ambitious enough
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Import libraries
-import pygame
-import sys
-from ship import Ship
-from settings import Settings
+#Link to the Github
+    #https://github.com/0TheFlare0/finalProject.git
 
 '''
 Week12: We added the sprites that we made into the the settings.py as well as 
 ship.py. We also added fixed some miss understandings of Python Crash Course 
-with the code that is in ship.py as well as settings.py. We alsp tried figuring out how GitHub works
+with the code that is in ship.py as well as settings.py. We also tried figuring out how GitHub works
 and how to have it so files will sync between Visual Studio Code and GitHub
+
+Week13: We added more sprites into the image folder and converted them into PNG images. We also found out and
+succesfully found out how to sync Visual Studio Code with so that when we update the code within Visual Studio
+Code, it automatically updates in GitHub. We also tried to fixe the problem with the screen and images not
+displaying by using the pygame.image.load() line of code
 '''
 
-#Code gotten from Python Crash Course that runs the actual screen for the game
+#Import libraries
+import pygame
+import game_functions as gf
+from ship import Ship
+from settings import Settings
+
+'''
+Code gotten and adapted from Eric Matthes Python Crash Course
+This code was typed my Michael Davis
+'''
+#That runs the actual screen for the game
 def run_game():
     #Creates a screen object
     pygame.init()
@@ -29,18 +41,18 @@ def run_game():
 
     #Make the ship
     ship = Ship(screen)
+    #This will load the background image for the game
+    #Instead of just a simple color background, we want to use an image. I learned this line of code from...
+        #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
+    pygame.image.load(ai_settings.bg_image)
 
     #Start the main loop for the game
     while True:
-        screen.fill(ai_settings.bg_image)
+        gf.check_events()
 
-        #This code makes it watch for keyboard presses
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
         
-        #This will redraw the screen for each loop
-        screen.fill(ai_settings.bg_image)
+        #This will redraw the screen for each loop (which is the ship and later the boss and lasers)
+        screen.fill(ai_settings.bg_color)
         ship.blitme()
 
         #Makes the most recently drawn screen visible
