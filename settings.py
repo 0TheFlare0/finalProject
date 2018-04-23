@@ -8,7 +8,7 @@ class Settings():
         self.bg_image = "image/Background.png"
         self.bg_color = (0, 0, 0)
         #Ship settings
-        self.ship_speed_factor = 2
+        self.ship_speed_factor = 5
         #Bullet Settings
         # self.laser_speed_factor = 1
         # self.laser_image = "image/Laser.gif"

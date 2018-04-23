@@ -18,7 +18,8 @@ and how to have it so files will sync between Visual Studio Code and GitHub
 Week13: We added more sprites into the image folder and converted them into PNG images. We also found out and
 succesfully found out how to sync Visual Studio Code with so that when we update the code within Visual Studio
 Code, it automatically updates in GitHub. We also tried to fixe the problem with the screen and images not
-displaying by using the pygame.image.load() line of code
+displaying by using the pygame.image.load() line of code. We then started on making it so the ship can actually
+move
 '''
 
 #Import libraries
@@ -48,14 +49,8 @@ def run_game():
 
     #Start the main loop for the game
     while True:
-        gf.check_events()
-
-        
-        #This will redraw the screen for each loop (which is the ship and later the boss and lasers)
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
-
-        #Makes the most recently drawn screen visible
-        pygame.display.flip()
+        gf.check_events(ship)
+        ship.update()
+        gf.update_screen(ai_settings, screen, ship)
 
 run_game()
