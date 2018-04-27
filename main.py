@@ -20,6 +20,9 @@ succesfully found out how to sync Visual Studio Code with so that when we update
 Code, it automatically updates in GitHub. We also tried to fixe the problem with the screen and images not
 displaying by using the pygame.image.load() line of code. We then started on making it so the ship can actually
 move
+
+Week14: We were successful in making the ship actually move and now it can also move with WASD instead of the
+arrow keys. We also made it so the ship now has bo
 '''
 
 #Import libraries
@@ -41,7 +44,7 @@ def run_game():
     pygame.display.set_caption("Space Shooter")
 
     #Make the ship
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
