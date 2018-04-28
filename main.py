@@ -22,14 +22,16 @@ displaying by using the pygame.image.load() line of code. We then started on mak
 move
 
 Week14: We were successful in making the ship actually move and now it can also move with WASD instead of the
-arrow keys. We also made it so the ship now has bo
+arrow keys. We also made it so the ship now has boarders so that it can not move outside the boarder.
 '''
 
 #Import libraries
 import pygame
+from pygame.sprite import Group 
 import game_functions as gf
 from ship import Ship
 from settings import Settings
+from laser import Laser
 
 '''
 Code gotten and adapted from Eric Matthes Python Crash Course
@@ -45,6 +47,10 @@ def run_game():
 
     #Make the ship
     ship = Ship(ai_settings, screen)
+    #Make a group to store bullets in
+    laser = Group()
+
+
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
@@ -52,8 +58,9 @@ def run_game():
 
     #Start the main loop for the game
     while True:
-        gf.check_events(ship)
+        gf.check_events(ai_settings, screen, ship, laser)
         ship.update()
-        gf.update_screen(ai_settings, screen, ship)
+        laser.update()
+        gf.update_screen(ai_settings, screen, ship, laser)
 
 run_game()

@@ -10,7 +10,7 @@ class Settings():
         #Ship settings
         self.ship_speed_factor = .8
         #Bullet Settings
-        # self.laser_speed_factor = 1
-        # self.laser_image = "image/Laser.gif"
-        # self.laser_width = 3
-        # self.laser_height = 15
+        self.laser_speed_factor = 1
+        self.laser_image = "image/Laser.png"
+        self.laser_width = 21
+        self.laser_height = 21

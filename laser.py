@@ -1,5 +1,5 @@
 import pygame
-from pygame.sprites import Sprite
+from pygame.sprite import Sprite
 
 #Laser is subclass and Sprite is a superclass (Code from Python Crash Course)
 class Laser(Sprite):
@@ -16,19 +16,19 @@ class Laser(Sprite):
         self.rect.right = ship.rect.right
 
         #Store the laser's postion as a decimal value
-        self.y =float(self.rect.y)
+        self.x =float(self.rect.x)
 
-        self.image = ai_settings.laser.image
+        self.image = ai_settings.laser_image
         self.speed_factor = ai_settings.laser_speed_factor
 
 def update(self):
     #Move bullet through the screen
     #Update the decimal postion of the laser
-    self.y -= self.speed_factor
+    self.x -= self.speed_factor
     #Update the rect postion
-    self.rect.y = self.y
+    self.rect.x = self.x
 
-def draw_bullet(self):
+def draw_laser(self):
     #Draw the bullet to the screen (replace self.color with self.image since we are using an image an not just a color)
     pygame.draw.rect(self.screen, self.image, self.rect)
 

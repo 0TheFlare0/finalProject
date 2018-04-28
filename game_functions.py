@@ -1,5 +1,6 @@
 import sys
 import pygame
+from laser import Laser
 
 #Code gotten from Python Crash Course
 def check_events(ship):
@@ -9,6 +10,7 @@ def check_events(ship):
             sys.exit()
 
 #Helps in moving the ship up (modified to use WASD)
+#It also helps in dectecting if the kay is pressed or not for WASD or the space bar
     #https://www.pygame.org/docs/ref/key.html
 def check_keydown_event(event, ship):
     if event.key == pygame.K_w:
