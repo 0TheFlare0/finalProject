@@ -8,28 +8,34 @@ class Laser(Sprite):
         #Create a laser object at the ship's current postion
         super(Laser, self).__init__()
         self.screen = screen
+        self.image = pygame.image.load("image/Laser.png")
 
         #Create a bullet rect at (0,0) and then set the current postion
-        self.rect = pygame.Rect(0, 0, ai_settings.laser_width,
-            ai_settings.laser_height)
+        #self.rect = pygame.Rect(0, 0, ai_settings.laser_width,
+        #    ai_settings.laser_height)
+        self.rect = self.image.get_rect()
         self.rect.centerx = ship.rect.centerx
+        self.rect.centery = ship.rect.centery
         self.rect.right = ship.rect.right
 
         #Store the laser's postion as a decimal value
         self.x =float(self.rect.x)
+        self.y = float(self.rect.y)
 
-        self.image = ai_settings.laser_image
+        #self.image = ai_settings.laser_image
         self.speed_factor = ai_settings.laser_speed_factor
 
-def update(self):
-    #Move bullet through the screen
-    #Update the decimal postion of the laser
-    self.x -= self.speed_factor
-    #Update the rect postion
-    self.rect.x = self.x
+    def update(self):
+        #Move bullet through the screen
+        #Update the decimal postion of the laser
+        self.x += self.speed_factor
+        #Update the rect postion
+        self.rect.x = self.x
+        self.rect.y = self.y
 
-def draw_laser(self):
-    #Draw the bullet to the screen (replace self.color with self.image since we are using an image an not just a color)
-    pygame.draw.rect(self.screen, self.image, self.rect)
+    def blitme(self):
+        #Draw the bullet to the screen (replace self.color with self.image since we are using an image an not just a color)
+        #pygame.draw.rect(self.screen, self.image, self.rect)
+        self.screen.blit(self.image, self.rect)
 
 

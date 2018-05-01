@@ -50,12 +50,12 @@ def run_game():
     #Make a group to store bullets in
     laser = Group()
 
-
+ 
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
-    pygame.image.load(ai_settings.bg_image)
-
+    pygame.image.load(ai_settings.bg_image) 
+    
     #Start the main loop for the game
     while True:
         gf.check_events(ai_settings, screen, ship, laser)

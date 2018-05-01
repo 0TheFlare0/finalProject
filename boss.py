@@ -3,9 +3,8 @@ import pygame
 class Boss():
   
   
-  
-  
 
+#--------------------------
 
 
 import sys, random, pygame
