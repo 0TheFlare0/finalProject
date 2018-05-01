@@ -3,7 +3,7 @@ import pygame
 from pygame.sprite import Sprite
 
 
-class Enemy(Sprite):
+class Boss(Sprite):
     # a class to represent an enemy ship
 
     def __init__(self, ai_settings, screen):
@@ -34,7 +34,6 @@ class Enemy(Sprite):
 
         # Taken from https://stackoverflow.com/questions/20044791/how-to-make-an-enemy-follow-the-player-in-pygame written by Ashish Nitin Patil
 
-    class Enemy(object):
         def __init__(self, y):  # initial position
             self.y = y
 
