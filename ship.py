@@ -8,7 +8,7 @@ class Ship():
         self.ai_settings = ai_settings
         
         #This will load the ship sprite and get its rect (or rectangle)
-        self.image = pygame.image.load('image/Ship.png')
+        self.image = pygame.image.load('Ship.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
        

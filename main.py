@@ -23,6 +23,10 @@ move
 
 Week14: We were successful in making the ship actually move and now it can also move with WASD instead of the
 arrow keys. We also made it so the ship now has boarders so that it can not move outside the boarder.
+
+Week15: We were successful in making the ship shoot a limited ammount of bullets as well as started to figure
+out how to put in the boss into the already almost done code files like main and game_functions. Stil working
+on getting the background to work with us 
 '''
 
 #Import libraries
@@ -32,6 +36,7 @@ import game_functions as gf
 from ship import Ship
 from settings import Settings
 from laser import Laser
+from boss import Boss
 
 '''
 Code gotten and adapted from Eric Matthes Python Crash Course
@@ -47,20 +52,23 @@ def run_game():
 
     #Make the ship
     ship = Ship(ai_settings, screen)
-    #Make a group to store bullets in
-    laser = Group()
+    #Make a group to store lasers in
+    lasers = Group()
+    #boss = Boss(ai_settings, screen)
 
  
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
     pygame.image.load(ai_settings.bg_image) 
-    
+
     #Start the main loop for the game
     while True:
-        gf.check_events(ai_settings, screen, ship, laser)
+        gf.check_events(ai_settings, screen, ship, lasers)
         ship.update()
-        laser.update()
-        gf.update_screen(ai_settings, screen, ship, laser)
+        #boss.update()
+        gf.update_lasers(lasers)
 
-run_game()
+        gf.update_screen(ai_settings, screen, ship, lasers)
+
+run_game() 

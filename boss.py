@@ -8,7 +8,7 @@ class Boss(Sprite):
 
     def __init__(self, ai_settings, screen):
         # init the alien and set its starting pos
-        super(Enemy, self).__init__()
+        super(Boss, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -17,7 +17,7 @@ class Boss(Sprite):
         self.rect = self.image.get_rect()
 
         # start each enemy at the middle right screen
-        self.rect.midleft = self.screen_rect.midright
+        self.rect.midright = self.screen_rect.midright
 
         def blitme(self):
             """Draw the Boss at its current location."""

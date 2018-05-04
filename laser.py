@@ -8,7 +8,7 @@ class Laser(Sprite):
         #Create a laser object at the ship's current postion
         super(Laser, self).__init__()
         self.screen = screen
-        self.image = pygame.image.load("image/Laser.png")
+        self.image = pygame.image.load("Laser.png")
 
         #Create a bullet rect at (0,0) and then set the current postion
         #self.rect = pygame.Rect(0, 0, ai_settings.laser_width,
@@ -35,6 +35,7 @@ class Laser(Sprite):
 
     def blitme(self):
         #Draw the bullet to the screen (replace self.color with self.image since we are using an image an not just a color)
+        #Thanks to help from Mr. Cozart in helping making it so that it can load an image instead of loading a color
         #pygame.draw.rect(self.screen, self.image, self.rect)
         self.screen.blit(self.image, self.rect)
 
