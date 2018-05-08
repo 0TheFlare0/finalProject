@@ -6,20 +6,43 @@
 #My project might to ambitious in that the power ups might take more time then expected to make and the boss might be too difficult to make intresting and fun
 #I don't see that there are many parts to this project that are not ambitious enough
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Import libraries
-import pygame
-import sys
-from ship import Ship
-from settings import Settings
+#Link to the Github
+    #https://github.com/0TheFlare0/finalProject.git
 
 '''
 Week12: We added the sprites that we made into the the settings.py as well as 
 ship.py. We also added fixed some miss understandings of Python Crash Course 
-with the code that is in ship.py as well as settings.py. We alsp tried figuring out how GitHub works
+with the code that is in ship.py as well as settings.py. We also tried figuring out how GitHub works
 and how to have it so files will sync between Visual Studio Code and GitHub
+
+Week13: We added more sprites into the image folder and converted them into PNG images. We also found out and
+succesfully found out how to sync Visual Studio Code with so that when we update the code within Visual Studio
+Code, it automatically updates in GitHub. We also tried to fixe the problem with the screen and images not
+displaying by using the pygame.image.load() line of code. We then started on making it so the ship can actually
+move
+
+Week14: We were successful in making the ship actually move and now it can also move with WASD instead of the
+arrow keys. We also made it so the ship now has boarders so that it can not move outside the boarder.
+
+Week15: We were successful in making the ship shoot a limited ammount of bullets as well as started to figure
+out how to put in the boss into the already almost done code files like main and game_functions. Stil working
+on getting the background to work with us 
 '''
 
-#Code gotten from Python Crash Course that runs the actual screen for the game
+#Import libraries
+import pygame
+from pygame.sprite import Group 
+import game_functions as gf
+from ship import Ship
+from settings import Settings
+from laser import Laser
+from boss import Boss
+
+'''
+Code gotten and adapted from Eric Matthes Python Crash Course
+This code was typed my Michael Davis
+'''
+#That runs the actual screen for the game
 def run_game():
     #Creates a screen object
     pygame.init()
@@ -28,22 +51,25 @@ def run_game():
     pygame.display.set_caption("Space Shooter")
 
     #Make the ship
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
+    #Make a group to store lasers in
+    lasers = Group()
+    #Make a group to store boss
+    boss = Boss(ai_settings, screen)
+
+ 
+    #This will load the background image for the game
+    #Instead of just a simple color background, we want to use an image. I learned this line of code from...
+        #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
+    pygame.image.load(ai_settings.bg_image) 
 
     #Start the main loop for the game
     while True:
-        screen.fill(ai_settings.bg_image)
+        gf.check_events(ai_settings, screen, ship, boss, lasers)
+        ship.update()
+        boss.update()
+        gf.update_lasers(lasers)
 
-        #This code makes it watch for keyboard presses
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        
-        #This will redraw the screen for each loop
-        screen.fill(ai_settings.bg_image)
-        ship.blitme()
+        gf.update_screen(ai_settings, screen, ship, boss, lasers)
 
-        #Makes the most recently drawn screen visible
-        pygame.display.flip()
-
-run_game()
+run_game() 
