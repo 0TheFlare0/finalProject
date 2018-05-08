@@ -16,4 +16,6 @@ class Settings():
         self.laser_height = 21
         self.lasers_allowed = 8
         #Boss Settings
-        #self.boss_speed_factor =
+        self.boss_speed_factor = 3
+        self.boss_drop_speed = 10
+        self.boss_direction = 

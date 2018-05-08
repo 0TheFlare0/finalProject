@@ -1,6 +1,7 @@
 import sys
 import pygame
 from laser import Laser
+from boss_laser import BossLaser
 
 #Code gotten from Python Crash Course
 
@@ -18,10 +19,6 @@ def check_keydown_event(event, ai_settings, screen, ship, boss, lasers):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_laser(ai_settings, screen, ship, lasers)
-    elif event.key == pygame.K_w:
-        boss.moving_up = True
-    elif event.key == pygame.K_s:
-        boss.moving_down = True
     elif event.key == pygame.K_ESCAPE:
         sys.exit()
 
@@ -31,6 +28,11 @@ def fire_laser(ai_settings, screen, ship, lasers):
     if len(lasers) < ai_settings.lasers_allowed:
         new_laser = Laser(ai_settings, screen, ship)
         lasers.add(new_laser)
+
+def fire_boss_laser(ai_settings, screen, boss, b_lasers):
+    if len(b_lasers) < ai_settings.b_laser_allowed:
+        new_b_laser = BossLaser(ai_settings, screen, boss)
+        b_lasers.add(new_b_laser)
 
 
 def check_keyup_event(event, ship, boss):
@@ -47,7 +49,7 @@ def check_keyup_event(event, ship, boss):
     elif event.key == pygame.K_s:
         boss.moving_down = False
 
-def check_events(ai_settings, screen, ship, boss, lasers):
+def check_events(ai_settings, screen, ship, boss, lasers, b_lasers):
     #Responds to keypresses and mouse events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -58,7 +60,7 @@ def check_events(ai_settings, screen, ship, boss, lasers):
             check_keyup_event (event, ship, boss)
 
 #This will update images on screen and flip to the new screen
-def update_screen(ai_settings, screen, ship, boss, lasers):
+def update_screen(ai_settings, screen, ship, boss, lasers, b_lasers):
     #This will redraw the screen for each loop (which is the ship and later the boss and lasers)
     screen.fill(ai_settings.bg_color)
     #screen.blit(ai_settings.bg_image)
@@ -82,3 +84,10 @@ def update_lasers(lasers):
         if laser.rect.left >= 900:
             lasers.remove(laser)
     #print(len(lasers))
+
+def update_b_lasers(b_lasers):
+    b_lasers.update()
+
+    for b_laser in b_lasers.copy():
+        if b_laser.rect.right <= 0:
+            b_lasers.remove(b_laser)
