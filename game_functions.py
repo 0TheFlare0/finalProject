@@ -2,13 +2,15 @@ import sys
 import pygame
 from laser import Laser
 from boss_laser import BossLaser
+from pygame.sprite import Sprite
+from boss import Boss
 
 #Code gotten from Python Crash Course
 
 #Helps in moving the ship up (modified to use WASD)
 #It also helps in dectecting if the kay is pressed or not for WASD or the space bar
     #https://www.pygame.org/docs/ref/key.html
-def check_keydown_event(event, ai_settings, screen, ship, boss, lasers):
+def check_keydown_event(event, ai_settings, screen, ship, lasers):
     if event.key == pygame.K_w:
         ship.moving_up = True
     elif event.key == pygame.K_s:
@@ -35,7 +37,7 @@ def fire_boss_laser(ai_settings, screen, boss, b_lasers):
         b_lasers.add(new_b_laser)
 
 
-def check_keyup_event(event, ship, boss):
+def check_keyup_event(event, ship):
     if event.key == pygame.K_w:
         ship.moving_up = False
     elif event.key == pygame.K_s:
@@ -44,10 +46,6 @@ def check_keyup_event(event, ship, boss):
         ship.moving_right = False
     elif event.key == pygame.K_a:
         ship.moving_left = False
-    elif event.key == pygame.K_w:
-        boss.moving_up = False
-    elif event.key == pygame.K_s:
-        boss.moving_down = False
 
 def check_events(ai_settings, screen, ship, boss, lasers, b_lasers):
     #Responds to keypresses and mouse events
@@ -55,9 +53,9 @@ def check_events(ai_settings, screen, ship, boss, lasers, b_lasers):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            check_keydown_event (event, ai_settings, screen, ship, boss, lasers)
+            check_keydown_event (event, ai_settings, screen, ship, lasers)
         elif event.type == pygame.KEYUP:
-            check_keyup_event (event, ship, boss)
+            check_keyup_event (event, ship)
 
 #This will update images on screen and flip to the new screen
 def update_screen(ai_settings, screen, ship, boss, lasers, b_lasers):
@@ -70,10 +68,11 @@ def update_screen(ai_settings, screen, ship, boss, lasers, b_lasers):
 
     ship.blitme()
 
-    boss.blitme()
+    boss.draw(screen)
     
     #Makes the most recently drawn screen visible
     pygame.display.flip()
+
 
 def update_lasers(lasers):
     #Updates the bullet postion and gets rid of the old bullets off screen
@@ -91,3 +90,22 @@ def update_b_lasers(b_lasers):
     for b_laser in b_lasers.copy():
         if b_laser.rect.right <= 0:
             b_lasers.remove(b_laser)
+
+def check_boss_edges(ai_settings, boss):
+    #Responds if the boss reach an edge
+    for boss in boss.sprites():
+        if boss.check_edges():
+            change_boss_direction(ai_settings, boss)
+            break
+
+def change_boss_direction(ai_settings, boss):
+    for boss in boss.sprites():
+        boss.rect.y += ai_settings.boss_drop_speed
+    ai_settings.fleet_direction *= -1
+
+
+def update_boss(ai_settings, boss):
+    #Checks if boss is at an edge, and then update the postion of the boss
+    check_boss_edges(ai_settings, boss)
+    #Updates the postion of the boss
+    boss.update()

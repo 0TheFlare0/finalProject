@@ -5,7 +5,7 @@ from boss import Boss
 #Laser is subclass and Sprite is a superclass (Code from Python Crash Course)
 class BossLaser(Sprite):
     # class to manage lasers(or bullets)
-    def __init__ (self, ai_settings, screen, ship):
+    def __init__ (self, ai_settings, screen, boss):
         #Create a laser object at the ship's current postion
         super(BossLaser, self).__init__()
         self.screen = screen

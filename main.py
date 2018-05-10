@@ -27,6 +27,9 @@ arrow keys. We also made it so the ship now has boarders so that it can not move
 Week15: We were successful in making the ship shoot a limited ammount of bullets as well as started to figure
 out how to put in the boss into the already almost done code files like main and game_functions. Stil working
 on getting the background to work with us 
+
+Week16: We are currently implimenting the boss into the game. We have the boss appear on screen as well as move,
+but it currently has now borders, so it just flys of screen
 '''
 
 #Import libraries
@@ -51,25 +54,26 @@ def run_game():
     pygame.display.set_caption("Space Shooter")
 
     #Make the ship
-    ship = Ship(ai_settings, screen)
+    ship = Ship(ai_settings, screen)    
     #Make a group to store lasers in
     lasers = Group()
     b_lasers = Group()
     #Make a group to store boss
-    boss = Boss(ai_settings, screen)
+    boss = Group()
 
  
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
-    pygame.image.load(ai_settings.bg_image) 
+    pygame.image.load(ai_settings.bg_image)
 
-    #Start the main loop for the game
+    #Start the main loop for the game'
     while True:
         gf.check_events(ai_settings, screen, ship, boss, lasers, b_lasers)
         ship.update()
         boss.update()
         gf.update_lasers(lasers)
+        gf.update_boss(ai_settings, boss)
 
         gf.update_screen(ai_settings, screen, ship, boss, lasers, b_lasers)
 

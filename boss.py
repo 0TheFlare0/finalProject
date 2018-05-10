@@ -4,9 +4,10 @@ from pygame.sprite import Sprite
 from settings import Settings
 
 # a class to represent an enemy ship
-class Boss():
+class Boss(Sprite):
     def __init__(self, ai_settings, screen):
         # init the alien and set its starting pos
+        super(Boss, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -28,26 +29,14 @@ class Boss():
         self.y += (self.ai_settings.boss_speed_factor * self.ai_settings.boss_direction)
         self.rect.y = self.y
 
-
-        # Taken from https://stackoverflow.com/questions/20044791/how-to-make-an-enemy-follow-the-player-in-pygame written by Ashish Nitin Patil
-
-        def __init__(self, y):  # initial position
-            self.y = y
-
-        def move(self, speed=5):  # chase movement
-            # Movement along y direction
-            if self.y < py:
-                self.y += speed
-            elif self.y > py:
-                self.y -= speed
-
     def check_edges(self):
         # return true if boss is at top/bottom of screen
         screen_rect = self.screen.get_rect()
         if self.rect.top >= screen_rect.top:
             return True
-        elif self.rect.bottom <= 0:
+        elif self.rect.bottom >= screen_rect.bottom:
             return True
+
 
     def blitme(self):
         # draw alien at its current location
