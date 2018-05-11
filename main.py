@@ -30,11 +30,12 @@ on getting the background to work with us
 
 Week16: We are currently implimenting the boss into the game. We have the boss appear on screen as well as move,
 but it currently has now borders, so it just flys of screen
+    Now the Boss.png does not even load on screen
 '''
 
 #Import libraries
 import pygame
-from pygame.sprite import Group 
+from pygame.sprite import Group
 import game_functions as gf
 from ship import Ship
 from settings import Settings
@@ -51,7 +52,7 @@ def run_game():
     pygame.init()
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
-    pygame.display.set_caption("Space Shooter")
+    pygame.display.set_caption("Codetastrophe")
 
     #Make the ship
     ship = Ship(ai_settings, screen)    
@@ -59,7 +60,8 @@ def run_game():
     lasers = Group()
     b_lasers = Group()
     #Make a group to store boss
-    boss = Group()
+    boss = Boss(ai_settings, screen)
+    #boss = Boss(ai_settings, screen)
 
  
     #This will load the background image for the game

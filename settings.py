@@ -10,13 +10,13 @@ class Settings():
         #Ship settings
         self.ship_speed_factor = 1
         #Bullet Settings
-        self.laser_speed_factor = 3
+        self.laser_speed_factor = 2
         self.laser_image = "Laser.png"
         self.laser_width = 21
         self.laser_height = 21
-        self.lasers_allowed = 8
+        self.lasers_allowed = 4
         #Boss Settings
-        self.boss_speed_factor = 0
+        self.boss_speed_factor = 1
         self.boss_drop_speed = 10
         #This tells which direction the the ship goes: 1 for down and -1 for up
         self.boss_direction = -1

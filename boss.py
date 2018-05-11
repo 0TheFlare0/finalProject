@@ -14,7 +14,7 @@ class Boss(Sprite):
         # Load the enemy image and set its rect attribute
         self.image = pygame.image.load('Boss.png')
         self.rect = self.image.get_rect()
-        self.screen_rect = screen.get_rect()
+        self.screen_rect = self.screen.get_rect()
 
         # start each enemy at the middle right screen
         self.rect.midright = self.screen_rect.midright
@@ -22,6 +22,7 @@ class Boss(Sprite):
         # store aliens exact position
         self.y = float(self.rect.y)
         self.centery = float(self.rect.centery)
+        self.centerx = float(self.rect.centerx)
 
 
     def update(self):
@@ -34,7 +35,7 @@ class Boss(Sprite):
         screen_rect = self.screen.get_rect()
         if self.rect.top >= screen_rect.top:
             return True
-        elif self.rect.bottom >= screen_rect.bottom:
+        elif self.rect.bottom >= 0:
             return True
 
 
