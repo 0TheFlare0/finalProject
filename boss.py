@@ -1,7 +1,14 @@
 #adapted from cozort
+
+'''
+Code gotten and adapted from Eric Matthes Python Crash Course
+This code was typed my Aaron Ballard and Michael Davis
+Adapted from Mr.Cozort
+'''
 import pygame
 from pygame.sprite import Sprite
 from settings import Settings
+
 
 # a class to represent an enemy ship
 class Boss(Sprite):

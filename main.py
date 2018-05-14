@@ -58,10 +58,9 @@ def run_game():
     ship = Ship(ai_settings, screen)    
     #Make a group to store lasers in
     lasers = Group()
-    b_lasers = Group()
+    #b_lasers = Group()
     #Make a group to store boss
-    boss = Boss(ai_settings, screen)
-    #boss = Boss(ai_settings, screen)
+    boss = Group()
 
  
     #This will load the background image for the game
@@ -71,12 +70,12 @@ def run_game():
 
     #Start the main loop for the game'
     while True:
-        gf.check_events(ai_settings, screen, ship, boss, lasers, b_lasers)
+        gf.check_events(ai_settings, screen, ship, boss, lasers)
         ship.update()
         boss.update()
         gf.update_lasers(lasers)
         gf.update_boss(ai_settings, boss)
 
-        gf.update_screen(ai_settings, screen, ship, boss, lasers, b_lasers)
+        gf.update_screen(ai_settings, screen, ship, boss, lasers)
 
 run_game() 

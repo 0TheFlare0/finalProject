@@ -1,5 +1,10 @@
 import pygame
 
+'''
+Code gotten and adapted from Eric Matthes Python Crash Course
+This code was typed my Michael Davis
+'''
+
 class Settings():
     def __init__(self):
         #Screen Settings

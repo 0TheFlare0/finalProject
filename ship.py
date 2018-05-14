@@ -1,6 +1,11 @@
 import pygame
 from settings import Settings
 
+'''
+Code gotten and adapted from Eric Matthes Python Crash Course
+This code was typed my Michael Davis
+'''
+
 #This is adapted from Python Crash Course
 class Ship():
     def __init__(self, ai_settings, screen):
