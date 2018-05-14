@@ -60,7 +60,7 @@ def run_game():
     lasers = Group()
     #b_lasers = Group()
     #Make a group to store boss
-    boss = Group()
+    boss = Boss(ai_settings, screen)
 
  
     #This will load the background image for the game

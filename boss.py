@@ -40,9 +40,9 @@ class Boss(Sprite):
     def check_edges(self):
         # return true if boss is at top/bottom of screen
         screen_rect = self.screen.get_rect()
-        if self.rect.top >= screen_rect.top:
+        if self.rect.top <= screen_rect.top:
             return True
-        elif self.rect.bottom >= 0:
+        elif self.rect.bottom >= 504:
             return True
 
 

@@ -71,8 +71,7 @@ def update_screen(ai_settings, screen, ship, boss, lasers):
 
     ship.blitme()
 
-    boss.draw(screen)
-    #boss.blitme()
+    boss.blitme()
     
     #Makes the most recently drawn screen visible
     pygame.display.flip()
@@ -96,17 +95,14 @@ def update_lasers(lasers):
 #             b_lasers.remove(b_laser)
 
 def change_boss_direction(ai_settings, boss):
-
-    for boss in boss.sprites():
+    if boss.check_edges():
         boss.rect.y += ai_settings.boss_drop_speed
     ai_settings.boss_direction *= -1
 
 def check_boss_edges(ai_settings, boss):
     #Responds if the boss reach an edge
-    for boss in boss.sprites():
-        if boss.check_edges():
-            change_boss_direction(ai_settings, boss)
-            break
+    if boss.check_edges():
+        change_boss_direction(ai_settings, boss)
 
 
 def update_boss(ai_settings, boss):
