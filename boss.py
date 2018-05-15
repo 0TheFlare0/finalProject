@@ -2,7 +2,7 @@
 
 '''
 Code gotten and adapted from Eric Matthes Python Crash Course
-This code was typed my Aaron Ballard and Michael Davis
+This code was typed by Aaron Ballard and Mike
 Adapted from Mr.Cozort
 '''
 import pygame
