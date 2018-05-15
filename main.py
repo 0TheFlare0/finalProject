@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Me and Aaron will be working on making a side scroller shooter boss fight with a ship shooting lasers and maybe power ups
     #A very simple vision of what our game will look like (but in space with other different things)
         #https://www.youtube.com/watch?v=UxcCoDlnqr4
@@ -36,6 +37,8 @@ now the the pygame.display.flip is not updating the screen properly, so it is ma
 , like a paint brush
 '''
 
+=======
+>>>>>>> 493aa6a820c6abe2b517b9e230a3054da0729afe
 #Import libraries
 import pygame
 from pygame.sprite import Group
