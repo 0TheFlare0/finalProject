@@ -53,7 +53,6 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Codetastrophe")
-
     #Make the ship
     ship = Ship(ai_settings, screen)    
     #Make a group to store lasers in
@@ -61,21 +60,18 @@ def run_game():
     #b_lasers = Group()
     #Make a group to store boss
     boss = Boss(ai_settings, screen)
-
- 
     #This will load the background image for the game
     #Instead of just a simple color background, we want to use an image. I learned this line of code from...
         #http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
     pygame.image.load(ai_settings.bg_image)
 
-    #Start the main loop for the game'
+    #Start the main loop for the game
     while True:
         gf.check_events(ai_settings, screen, ship, boss, lasers)
         ship.update()
         boss.update()
         gf.update_lasers(lasers)
         gf.update_boss(ai_settings, boss)
-
         gf.update_screen(ai_settings, screen, ship, boss, lasers)
 
 run_game() 

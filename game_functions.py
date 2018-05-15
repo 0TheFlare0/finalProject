@@ -39,7 +39,6 @@ def fire_laser(ai_settings, screen, ship, lasers):
 #         new_b_laser = BossLaser(ai_settings, screen, boss)
 #         b_lasers.add(new_b_laser)
 
-
 def check_keyup_event(event, ship):
     if event.key == pygame.K_w:
         ship.moving_up = False
@@ -68,19 +67,14 @@ def update_screen(ai_settings, screen, ship, boss, lasers):
     #Redraw all lasers behind ship and boss
     for laser in lasers.sprites():
         laser.blitme()
-
     ship.blitme()
-
-    boss.blitme()
-    
+    boss.blitme()    
     #Makes the most recently drawn screen visible
     pygame.display.flip()
-
 
 def update_lasers(lasers):
     #Updates the bullet postion and gets rid of the old bullets off screen
     lasers.update()
-
     #Get rid of lasers that have disappeared
     for laser in lasers.copy():
         if laser.rect.left >= 900:
@@ -89,7 +83,6 @@ def update_lasers(lasers):
 
 # def update_b_lasers(b_lasers):
 #     b_lasers.update()
-
 #     for b_laser in b_lasers.copy():
 #         if b_laser.rect.right <= 0:
 #             b_lasers.remove(b_laser)
@@ -103,7 +96,6 @@ def check_boss_edges(ai_settings, boss):
     #Responds if the boss reach an edge
     if boss.check_edges():
         change_boss_direction(ai_settings, boss)
-
 
 def update_boss(ai_settings, boss):
     #Checks if boss is at an edge, and then update the postion of the boss
