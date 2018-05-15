@@ -34,7 +34,9 @@ def check_keydown_event(event, ship):
 
 ## Contributors
 > Michael Davis-the creator of the main charecter and its shooting charecteristics.
+
 > Aaron Ballard- The artistic designer for all sprites and backgrounds, designer and creator of the boss and all its AI functions.
+
 > Mr. Cozort- His face for the boss as well as his generous help at guiding us through this project.
 
 ## Installation
