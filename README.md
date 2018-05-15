@@ -1,7 +1,19 @@
 ## Chaos In Space
+
+> Link to the Github
+>    https://github.com/0TheFlare0/finalProject.git
 ___________
 ## Overview
 > Traveling through the dark galaxy, scavenging for rare Obsilatal DiHidralate. While searching on the outer layer of planet Obenite, home of Mystic Watcher, a disturbance took place on the final dive, awakening the beast from his sleep. Find a way out, or face the same fate that so many have gone through.
+
+## Goal
+> Aaron & I will be working on making a side scroller shooter boss fight with a ship shooting lasers and maybe power ups
+> A very simple vision of what our game will look like (but in space with other different things)
+> https://www.youtube.com/watch?v=UxcCoDlnqr4
+> Our first major milestone would be to make a working ship that can move and shoot the laser
+> I will need to learn how to use pygame's formating and library with what know on classes to make the code
+> My project might to ambitious in that the power ups might take more time then expected to make and the boss might be too difficult to    > make intresting and fun
+> I don't see that there are many parts to this project that are not ambitious enough
 
 ## Introduction
 > Creating an interactive game that lets you go up against an AI. Challenges the mind to strategize and plan ahead in real world scenarios. This game provides a fun and easy way to both play a side scroll shooter game and easily learn about all the different aspects of what goes into a PyGame.
@@ -91,3 +103,5 @@ def check_keydown_event(event, ship):
 > https://Facebook.com
 > Pygame crash course
 > http://kidscancode.org/
+
+
