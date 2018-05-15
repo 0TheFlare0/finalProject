@@ -59,6 +59,29 @@ def check_keydown_event(event, ship):
 >         Working out background to be able to run.
 >         testing out score keeper/ lives/ timer/ increasing speed/ increasing power
 
+## In Depth Breakdown
+> Week12: We added the sprites that we made into the the settings.py as well as 
+> ship.py. We also added fixed some miss understandings of Python Crash Course 
+> with the code that is in ship.py as well as settings.py. We also tried figuring out how GitHub works
+> and how to have it so files will sync between Visual Studio Code and GitHub
+
+> Week13: We added more sprites into the image folder and converted them into PNG images. We also found out and
+> succesfully found out how to sync Visual Studio Code with so that when we update the code within Visual Studio
+> Code, it automatically updates in GitHub. We also tried to fixe the problem with the screen and images not
+> displaying by using the pygame.image.load() line of code. We then started on making it so the ship can actually
+> move
+
+> Week14: We were successful in making the ship actually move and now it can also move with WASD instead of the
+> arrow keys. We also made it so the ship now has boarders so that it can not move outside the boarder.
+
+> Week15: We were successful in making the ship shoot a limited ammount of bullets as well as started to figure
+> out how to put in the boss into the already almost done code files like main and game_functions. Stil working
+> on getting the background to work with us 
+
+> Week16: We are currently implimenting the boss into the game. We have the boss appear on screen as well as move,
+> but it currently has now borders, so it just flys of screen
+>    Now the Boss.png does not even load on screen
+> '''
 
 ## Sources
 > https://www.pygame.org/docs/ref/key.html
