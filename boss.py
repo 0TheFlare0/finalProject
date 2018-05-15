@@ -12,7 +12,7 @@ from settings import Settings
 # a class to represent an enemy ship
 class Boss():
     def __init__(self, ai_settings, screen):
-        # init the alien and set its starting pos
+        # init the boss and set its starting pos
         self.screen = screen
         self.ai_settings = ai_settings
         # Load the enemy image and set its rect attribute
@@ -21,7 +21,8 @@ class Boss():
         self.screen_rect = self.screen.get_rect()
         # start each enemy at the middle right screen
         self.rect.midright = self.screen_rect.midright
-        # store aliens exact position
+        ##this may be the reason why it remembers the last location
+        # store boss exact position
         self.y = float(self.rect.y)
         self.centery = float(self.rect.centery)
         self.centerx = float(self.rect.centerx)
