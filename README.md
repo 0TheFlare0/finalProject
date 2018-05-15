@@ -1,23 +1,23 @@
-##Chaos In Space
+## Chaos In Space
 
-##Overview
+## Overview
 > Traveling through the dark galaxy, scavenging for rare Obsilatal DiHidralate. While searching on the outer layer of planet Obenite, home of Mystic Watcher, a disturbance took place on the final dive, awakening the beast from his sleep. Find a way out, or face the same fate that so many have gone through.
 
 ## Introduction
 > Creating an interactive game that lets you go up against an AI. Challenges the mind to strategize and plan ahead in real world scenarios. This game provides a fun and easy way to both play a side scroll shooter game and easily learn about all the different aspects of what goes into a PyGame.
 
 ## Code Samples
-> #Helps in moving the ship up (modified to use WASD)
->    #https://www.pygame.org/docs/ref/key.html
->def check_keydown_event(event, ship):
->    if event.key == pygame.K_w:
->        ship.moving_up = True
->    elif event.key == pygame.K_s:
->        ship.moving_down = True
->    elif event.key == pygame.K_d:
->        ship.moving_right = True
->    elif event.key == pygame.K_a:
->        ship.moving_left = True
+ #Helps in moving the ship up (modified to use WASD)
+    #https://www.pygame.org/docs/ref/key.html
+def check_keydown_event(event, ship):
+    if event.key == pygame.K_w:
+        ship.moving_up = True
+    elif event.key == pygame.K_s:
+        ship.moving_down = True
+    elif event.key == pygame.K_d:
+        ship.moving_right = True
+    elif event.key == pygame.K_a:
+        ship.moving_left = True
 
 ## Contributors
 > Michael Davis-the creator of the main charecter and its shooting charecteristics.
