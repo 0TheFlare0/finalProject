@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 from boss import Boss
-
+#This code was typed by Aaron and Mike
 #Laser is subclass and Sprite is a superclass (Code from Python Crash Course)
 class BossLaser(Sprite):
     # class to manage lasers(or bullets)
