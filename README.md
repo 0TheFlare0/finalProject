@@ -1,5 +1,4 @@
-# Game name
->Chaos In Space
+Chaos In Space
 
 
 ##Overview
