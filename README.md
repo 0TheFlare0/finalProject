@@ -60,8 +60,6 @@ def check_keydown_event(event, ship):
 >         testing out score keeper/ lives/ timer/ increasing speed/ increasing power
 
 
-
-
 ## Sources
 > https://www.pygame.org/docs/ref/key.html
 > http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
@@ -69,5 +67,4 @@ def check_keydown_event(event, ship):
 > https://stackoverflow.com/questions/20044791/how-to-make-an-enemy-follow-the-player-in-pygame written by Ashish Nitin Patil
 > https://Facebook.com
 > Pygame crash course
-
 > http://kidscancode.org/
