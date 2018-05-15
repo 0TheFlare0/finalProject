@@ -30,7 +30,10 @@ on getting the background to work with us
 
 Week16: We are currently implimenting the boss into the game. We have the boss appear on screen as well as move,
 but it currently has now borders, so it just flys of screen
-    Now the Boss.png does not even load on screen
+
+Week17: The boss now blits on screen as well as now moves up and down on screen by itself. The only issue is that
+now the the pygame.display.flip is not updating the screen properly, so it is making a streak of past blited images
+, like a paint brush
 '''
 
 #Import libraries

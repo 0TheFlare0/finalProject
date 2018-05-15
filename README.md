@@ -30,35 +30,46 @@ def check_keydown_event(event, ship):
 ## Progress week 1-7
 > Week 1- gathering similar project ideas to look at and use as guidelines.
 >         creating sprites for the boss, background, ship, bullets, and laser.
+>         We added the sprites that we made into the the settings.py as well as 
+>         ship.py. We also added fixed some miss understandings of Python Crash Course 
+>         with the code that is in ship.py as well as settings.py. We also tried figuring out how GitHub works
+>         and how to have it so files will sync between Visual Studio Code and GitHub
+
 > Week 2- Reading over Pygame crash course for similar project guidelines.
 >         adjusting sizes of sprites.
 >         putting in firt lines of code.
+
 > Week 3- Getting git hub to work and allow pulling from the application.
 >         Getting py-game to work on a mac.
 >         laying out all aspects of what will be going into the game.
-> Week 4- Getting Main ship to load onto screen with hit boxes.
+>         We added more sprites into the image folder and converted them into PNG images. We also found out   >         and succesfully found out how to sync Visual Studio Code with so that when we update the code       >         within Visual Studio Code, it automatically updates in GitHub. We also tried to fixe the problem    >         with the screen and images not displaying by using the pygame.image.load() line of code. We then    >         started on making it so the ship can actually move
+
+> Week 4- Getting Main ship to load onto screen.
 >         Gettign boss to load onto the screen.
+
 > Week 5- Allowing Main ship to move on screen with W-A-S-D Keys.
 >         Allowing Main ship to fire around.
 >         Making ship shoot to the right.
->         Allowing boss to follow main charecter in y axis.
+>         Working on allowing boss to follow main charecter in y axis.
+>         We were successful in making the ship shoot a limited ammount of bullets as well as started to      >         figure out how to put in the boss into the already almost done code files like main and             >         game_functions. Stil working on getting the background to work with us 
+
 > Week 6- Making the Main ship and Boss have broders to not let them go off the screen.
 >         Firing sprites instead of lines.
 >         Making the bullets dissapear after fired.
->         Making boss shoot out the eyes.
->         Changing boss to go just up and down.
->         Getting boss its hit markers.
+>         Working on changing boss to go just up and down.
+
 > Week 7- Removing all un-necessary lines of code that slow game  down.
 >         Move all sprites to one to add background.
->         Working out background to be able to run.
->         testing out score keeper/ lives/ timer/ increasing speed/ increasing power
+>         Working out background to be able to run
+>         Trying to get health bar and collstion with boss, ship, and lasers in game
+>         The boss now blits on screen as well as now moves up and down on screen by itself. The only issue   >         is thatnow the the pygame.display.flip is not updating the screen properly, so it is making a       >         streak of past blited images, like a paint brush
 
 
 ## Sources
 > https://www.pygame.org/docs/ref/key.html
 > http://programarcadegames.com/index.php?chapter=bitmapped_graphics_and_sound
-> https://bcpsj-my.sharepoint.com/personal/ccozort_bcp_org/Documents/Forms/All.aspx?slrid=c4d2659e-a009-5000-c17b-e7436e6e6a4c&RootFolder=%2Fpersonal%2Fccozort_bcp_org%2FDocuments%2F02_Computer%20Science%2FIntro%20to%20Programming%2Fcozort_chris&FolderCTID=0x0120008A1882DAC829A044BA12245B991DC6B8
-> https://stackoverflow.com/questions/20044791/how-to-make-an-enemy-follow-the-player-in-pygame written by Ashish Nitin Patil
+> https://bcpsj-my.sharepoint.com/personal/ccozort_bcp_org/Documents/Forms/All.aspx?                            slrid=c4d2659e-a009-5000-c17b-e7436e6e6a4c&                                 
+  RootFolder=%2Fpersonal%2Fccozort_bcp_org%2FDocuments%2F02_Computer%20Science%2FIntro%20to%20Programming%2Fcozort_chris&FolderCTID=0x0120008A1882DAC829A044BA12245B991DC6B8
+> https://stackoverflow.com/questions/20044791/how-to-make-an-enemy-follow-the-player-in-pygame written by      Ashish Nitin Patil
 > https://Facebook.com
-> Pygame crash course
-> http://kidscancode.org/
+> Pygame Crash Course by Eric Matthes
