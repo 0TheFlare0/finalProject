@@ -1,4 +1,4 @@
-##                              Chaos In Space
+##                                                           Chaos In Space
 
 ## Overview
 > Traveling through the dark galaxy, scavenging for rare Obsilatal DiHidralate. While searching on the outer layer of planet Obenite, home of Mystic Watcher, a disturbance took place on the final dive, awakening the beast from his sleep. Find a way out, or face the same fate that so many have gone through.
