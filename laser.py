@@ -1,6 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
 
+#This code was typed by Aaron & Mike
+
 #Laser is subclass and Sprite is a superclass (Code from Python Crash Course)
 class Laser(Sprite):
     # class to manage lasers(or bullets)
