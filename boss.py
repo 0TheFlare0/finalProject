@@ -41,5 +41,5 @@ class Boss():
             return True
 
     def blitme(self):
-        # draw alien at its current location
+        # draw boss at its current location
         self.screen.blit(self.image, self.rect)
