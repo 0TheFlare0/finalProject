@@ -30,30 +30,30 @@ def check_keydown_event(event, ship):
 ## Progress week 1-7
 > Week 1- gathering similar project ideas to look at and use as guidelines.
 >         creating sprites for the boss, background, ship, bullets, and laser.
-
+>
 > Week 2- Reading over Pygame crash course for similar project guidelines.
 >         adjusting sizes of sprites.
 >         putting in firt lines of code.
-
+>
 > Week 3- Getting git hub to work and allow pulling from the application.
 >         Getting py-game to work on a mac.
 >         laying out all aspects of what will be going into the game.
-
+>
 > Week 4- Getting Main ship to load onto screen with hit boxes.
 >         Gettign boss to load onto the screen.
-
+>
 > Week 5- Allowing Main ship to move on screen with W-A-S-D Keys.
 >         Allowing Main ship to fire around.
 >         Making ship shoot to the right.
 >         Allowing boss to follow main charecter in y axis.
-
+>
 > Week 6- Making the Main ship and Boss have broders to not let them go off the screen.
 >         Firing sprites instead of lines.
 >         Making the bullets dissapear after fired.
 >         Making boss shoot out the eyes.
 >         Changing boss to go just up and down.
 >         Getting boss its hit markers.
-
+>
 > Week 7- Removing all un-necessary lines of code that slow game  down.
 >         Move all sprites to one to add background.
 >         Working out background to be able to run.
