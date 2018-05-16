@@ -33,11 +33,13 @@ def check_keydown_event(event, ship):
         ship.moving_left = True
 
 ## Contributors
-> Michael Davis-the creator of the main charecter and its shooting charecteristics.
+> Michael Davis-the creator of the main charecter and its shooting charecteristics and maker of the game settings that are programmed such as boundaries, reloading screen, and bullet settings. 
 
-> Aaron Ballard- The artistic designer for all sprites and backgrounds, designer and creator of the boss and all its AI functions.
+> Aaron Ballard- The artistic designer for all sprites and backgrounds, designer and creator of the boss and all its AI functions, and maker of the README.
 
 > Mr. Cozort- His face for the boss as well as his generous help at guiding us through this project.
+
+> Jerome- His insane knowledge to reload the screen to not make the charecters paths go around everywhere. 
 
 ## Installation
 > To run the game, first make sure you are running Python 3.6. You should also have PyGame installed on your computer before running. From there, open up "Main.py" and click run. The game should load up, and let you play!
