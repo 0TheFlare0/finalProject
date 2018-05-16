@@ -107,7 +107,9 @@ def check_keydown_event(event, ship):
 >         Move all sprites to one to add background.
 >         Working out background to be able to run
 >         Trying to get health bar and collstion with boss, ship, and lasers in game
->         The boss now blits on screen as well as now moves up and down on screen by itself. The only issue   >         is thatnow the the pygame.display.flip is not updating the screen properly, so it is making a       >         streak of past blited images, like a paint brush
+>         The boss now blits on screen as well as now moves up and down on screen by itself.
+>         The only issue is that now the the pygame.display.flip is not updating the screen properly, so it is making a
+>         streak of past blited images, like a paint brush
 
 ## In Depth Breakdown
 > Week12: We added the sprites that we made into the the settings.py as well as 
