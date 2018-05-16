@@ -103,7 +103,6 @@ def check_keydown_event(event, ship):
 >         Getting boss its hit markers.
 >
 > Week 18- Removing all un-necessary lines of code that slow game  down.
->>>>>>> 493aa6a820c6abe2b517b9e230a3054da0729afe
 >         Move all sprites to one to add background.
 >         Working out background to be able to run
 >         Trying to get health bar and collstion with boss, ship, and lasers in game
@@ -149,4 +148,3 @@ def check_keydown_event(event, ship):
 > http://kidscancode.org/
 
 
->>>>>>> 493aa6a820c6abe2b517b9e230a3054da0729afe
